@@ -19,9 +19,13 @@ app.use('/Public', express.static('Public')); // Tells the server where the stat
 //  In this cases, we use res.render instead of res.send 
 //  in order to load the EJS file 
 
-// Index
+// Index -> Log in 
 app.get('/', (req, res) => {
-    res.render('pages/Index'); 
+    res.render('pages/Index', { page: 'Log-in' }); 
+});
+
+app.get('/sign-up', (req, res) => {
+    res.render('pages/Index', { page: 'Sign-up'})
 });
 
 // Admin 
@@ -42,6 +46,11 @@ app.get('/past-results', (req, res) => {
 //Ranking 
 app.get('/ranking', (req, res) => {
     res.render('pages/Ranking'); 
+}); 
+
+// If no other route was matched -----> TO DO : Make it in ejs 
+app.get('*', (req, res) => {
+    res.send('<h1 style="background-color: aqua; font-weight:300; width: 100%; text-align:center; margin-top: 20rem"> Page not found <br> :(</h1>  '); 
 }); 
 
 

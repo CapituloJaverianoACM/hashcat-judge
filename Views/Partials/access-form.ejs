@@ -1,26 +1,29 @@
 <div class="container border border-white rounded-3 p-5">
     <!-- Form name -->
-    <p class="display-4 text-white mb-5 form-title"> Sign up </p>
+    <p class="display-4 text-white mb-4 form-title"> <%= formName.replace('-', ' '); %> </p>
 
     <!-- Form -->
     <form class="row g-3"> 
-        <!-------------- First row ------------>
-        <!-- First name -->
-        <div class="form-group col-md-6">
-            <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
-        </div>
-        <!-- Last name -->
-        <div class="form-group col-md-6">
-            <input type="text" class="form-control" id="inputSecondName" placeholder="Last Name">
-        </div>
+        <!-------------- Names Row ------------>
+        <% // Check if the form is for log in or sign in  %> 
+        <% if (formName === 'Sign-up') { %> 
+            <!-- First name -->
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+            </div>
+            <!-- Last name -->
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="inputSecondName" placeholder="Last Name">
+            </div>
+        <% }; %>  
     
-        <!-------------- Second row ------------>
+        <!-------------- Email Row ------------>
         <!-- Email row -->
         <div class="form-group col-md-12">
             <input type="email" class="form-control" id="inputEmail" placeholder="example@javeriana.edu.co"> 
         </div>
     
-        <!-------------- Third row ------------>
+        <!-------------- Password Row ------------>
         <!-- Password row -->
         <div class="form-group col-md-12">
             <input type="password" class="form-control" id="inputPassword" placeholder="Password"> 
