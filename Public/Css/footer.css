@@ -1,0 +1,32 @@
+/*************
+*** Footer ***
+*************/
+footer .acm-logo {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+footer .acm-logo img {
+    width: 8rem;
+}
+footer .delimitator {
+    margin: 1rem 2.3rem; 
+}
+footer .social-media {
+    display: flex; 
+    justify-content: center;
+}
+footer .social-media ul {
+    list-style-type: none; 
+}
+footer .social-media #github-logo {
+    width: 2.3rem;
+    margin-right: 30px;
+}
+footer .social-media #facebook-logo {
+    width: 2rem;
+    margin-right: 30px;
+}
+footer .social-media #instagram-logo {
+    width: 2.9rem;
+}

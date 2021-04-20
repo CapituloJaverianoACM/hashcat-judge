@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include head information -->
+    <%- include('../partials/head'); %> 
+    <!-- Stylesheet -->
+    <link href="/Public/Css/index.css" rel="stylesheet"> 
+</head>
+<body> 
+
+    <header>
+        <!-- Include Navbar -->
+        <%- include('../partials/header'); %> 
+    </header> 
+
+
+    <!-- Main content -->
+    <div class="container d-flex align-items-center justify-content-around flex-wrap mt-3 mb-4">
+        <!-- Cat image -->
+        <div class="col-lg-6">
+            <img src="/Public/Assets/index-page-cat.png" alt="Cat image"> 
+        </div>
+
+        <!-- Form -->
+        <div class="col-lg-6">
+            <%- include('../partials/access-form'); %> 
+        </div>
+    </div>
+
+    
+    <!-- Include footer -->
+    <%- include('../partials/footer'); %> 
+    
+</body>
+</html>

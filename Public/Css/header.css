@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box !important;
+    background-color: black !important; 
+}
+
+/*************
+*** Navbar ***
+*************/
+.navbar {
+    font-weight: 200;
+    background-color: black !important;
+}
+.navbar .navbar-brand {
+    margin-left: 2rem !important; 
+}
+.navbar .navbar-brand img {
+    width: 8.3rem; 
+}
+@media (max-width: 576px) {
+    .navbar .navbar-brand img {
+        margin-left: -2rem; 
+        width: 23rem; 
+    } 
+}
+
+/*------- Access buttons ------*/
+.navbar .access-buttons {
+    margin-right: 2rem !important; 
+}
+.navbar .login, .navbar .sign-up {
+    font-size: 1rem !important;
+    font-weight: 240;
+    width: 10rem; 
+    height: 2rem;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+/*------- Sign up button ------*/ 
+.sign-up {
+    background-color: #18A0FB !important; 
+}
+.sign-up:hover {
+    color: #18A0FB !important; 
+    background-color: black !important; 
+}
+/*------- Login button ------*/ 
+.login {
+    color: #18A0FB !important; 
+}
+.login:hover {
+    color: white !important; 
+    background-color: #18A0FB !important; 
+}
