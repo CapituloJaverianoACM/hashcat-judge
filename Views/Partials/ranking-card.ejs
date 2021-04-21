@@ -1,0 +1,16 @@
+<div class="card text-center mb-5">
+    <div class="card-body">
+        <% if (place == 1) { %> 
+            <img src="/Public/Assets/first-place.png" alt="First place logo">
+        <% } else if (place == 2) { %> 
+            <img src="/Public/Assets/second-place.png" alt="Second place logo">
+        <% } else if (place == 3) { %> 
+            <img src="/Public/Assets/third-place.png" alt="Third place logo">
+        <% } else { %> 
+            <img src="/Public/Assets/place.png" alt="Other places logo">
+        <% } %>
+        <!-- Max 24 chars in name -->
+        <h5 class="card-title mt-2"> <%- contestant.name %>  </h5>
+        <p class="card-text "> Score <%- contestant.score %>/100 </p>
+    </div>
+</div>

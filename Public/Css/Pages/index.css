@@ -1,0 +1,18 @@
+/*---------------  Cat image  --------------*/
+.cat-image img {
+    width: 19rem;
+}
+
+@media (max-width: 992px) {
+    .cat-image img {
+        width: 10rem; 
+        margin-bottom: 2rem; 
+    }
+}
+
+@media (max-width: 576px) {
+    .cat-image img {
+        width: 5rem; 
+        margin-bottom: 2rem;  
+    }
+}

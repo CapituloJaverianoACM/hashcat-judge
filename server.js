@@ -44,8 +44,10 @@ app.get('/past-results', (req, res) => {
 });
 
 //Ranking 
+const user = {name: 'Juan Diego Campos', score: '100'}; 
+let contestants = [user, user, user]; 
 app.get('/ranking', (req, res) => {
-    res.render('pages/Ranking'); 
+    res.render('pages/Ranking', { contestants: contestants }); 
 }); 
 
 // If no other route was matched -----> TO DO : Make it in ejs 

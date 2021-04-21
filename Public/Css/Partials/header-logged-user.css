@@ -1,0 +1,14 @@
+
+.navbar {
+    margin: 0 2.3rem 1rem 2.3rem !important; 
+    background-color: black !important;
+    color: white !important; 
+}
+.attemp-btn, .ranking-btn, .ranking-btn, .past-results-btn {
+    color: white !important; 
+    background-color: #18A0FB !important; 
+}
+button:hover {
+    color: #18A0FB !important; 
+    background-color: black !important;
+}

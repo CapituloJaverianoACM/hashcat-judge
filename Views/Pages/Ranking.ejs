@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Head information -->
+    <%- include('../Partials/head'); %> 
+    <!----------- Stylesheet ---------->
+    <!-- Ranking cards -->
+    <link href="/Public/Css/Partials/ranking-card.css" rel="stylesheet" />
+    <!-- Navbar -->
+    <link href="/Public/Css/Partials/header-logged-user.css" rel="stylesheet" /> 
+    <!-- Ranking page -->
+    <link href="/Public/Css/Pages/ranking.css" rel="stylesheet" /> 
+</head>
+<body>
+    <header>
+        <!-- Navbar -->
+        <%- include('../partials/header-logged-user'); %> 
+    </header>
+
+
+    <!-- Main content -->
+    <div class="container-fluid mt-4">
+        <!-- Page name -->
+        <p class="text-white page-title"> Ranking : </p>
+        <!-- Cards for the podium -->
+        <div class="row d-flex justify-content-evenly">
+            <% for (let i = 0; i < 5 && i < contestants.length; i++) { %> 
+                <%- include('../Partials/ranking-card', {contestant: contestants[i], place: i + 1}); %>  
+            <% } %> 
+    </div>
+
+    <!-- Include footer -->
+    <%- include('../partials/footer'); %> 
+    
+</body>
+
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</html>

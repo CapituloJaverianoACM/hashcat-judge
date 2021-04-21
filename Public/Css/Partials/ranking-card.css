@@ -1,0 +1,9 @@
+.card {
+    width:18rem; 
+    border-color: white; 
+    color: white; 
+    font-weight: lighter;
+}
+.card .card-body img {
+    width: 2rem; 
+}

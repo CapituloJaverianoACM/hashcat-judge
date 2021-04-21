@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Head information -->
+    <%- include('../Partials/head'); %> 
+    
+    <!------------- Stylesheet ------------>
+    <!-- Navbar -->
+    <link href="/Public/Css/Partials/header-logged-user.css" rel="stylesheet" /> 
+    <!-- Footer -->
+    <link href="/Public/Css/Partials/footer.css" rel="stylesheet" /> 
+    <!-- Page -->
+    <link href="/Public/Css/Pages/attemp.css" rel="stylesheet" /> 
+
+</head>
+<body>
+
+    <header>
+        <!-- Include Navbar -->
+        <%- include('../partials/header-logged-user'); %> 
+    </header> 
+
+    <!-- Main content -->
+    <div class="container main d-flex align-items-center justify-content-center">
+        <!-- Attemp Form -->
+        <form>
+            <!-- Text area -->
+            <div class="form-group">
+                <label for="hashes">Enter hashes separated by new lines : </label>
+                <textarea class="form-control" id="hashes" rows="15"></textarea>
+            </div>
+            <!-- Submin button -->
+        </form>
+    </div>
+
+    <!-- Include footer -->
+    <%- include('../partials/footer'); %> 
+    
+</body>
+</html>

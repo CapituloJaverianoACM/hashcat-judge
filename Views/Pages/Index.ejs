@@ -4,30 +4,32 @@
     <!-- Include head information -->
     <%- include('../partials/head'); %> 
     <!-- Stylesheet -->
-    <link href="/Public/Css/index.css" rel="stylesheet"> 
+    <link href="/Public/Css/Pages/index.css" rel="stylesheet"> 
+    <!-- Navbar stylesheet -->
+    <link href="/Public/Css/Partials/header-index.css" rel="stylesheet">
+    <!-- Access form stylesheet -->
+    <link href="/Public/Css/Partials/access-form.css" rel="stylesheet"> 
 </head>
 <body> 
 
     <header>
         <!-- Include Navbar -->
-        <%- include('../partials/header'); %> 
+        <%- include('../partials/header-index'); %> 
     </header> 
-
 
     <!-- Main content -->
     <div class="container d-flex align-items-center justify-content-around flex-wrap mt-3 mb-4">
         <!-- Cat image -->
-        <div class="col-lg-6">
+        <div class="col-lg-6 cat-image">
             <img src="/Public/Assets/index-page-cat.png" alt="Cat image"> 
         </div>
 
         <!-- Form -->
         <div class="col-lg-6">
-            <%- include('../partials/access-form', {formName: page}); %> 
+            <%- include('../partials/access-form', { formName: page }); %> 
         </div>
     </div>
 
-    
     <!-- Include footer -->
     <%- include('../partials/footer'); %> 
     

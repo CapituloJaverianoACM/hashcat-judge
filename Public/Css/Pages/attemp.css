@@ -1,0 +1,15 @@
+/*---------  Main content  ------------*/ 
+.main {
+    height: 37rem;
+}
+/*---------  Enter Hashes form  ------------*/ 
+form .form-group label {
+    color: white !important; 
+    font-weight: lighter;
+    font-size: 1.8rem; 
+}
+textarea {
+    max-height: 50vh !important; 
+    color: white !important; 
+    font-weight: 250 !important;
+}
