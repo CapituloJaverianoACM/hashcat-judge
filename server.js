@@ -2,6 +2,9 @@
 //-------  Dependencies  --------
 //-------------------------------
 import express from 'express'; 
+import mongodb from 'mongodb'; 
+import mongoose from 'mongoose'; 
+import bodyParser from 'body-parser'; 
 
 
 //-------------------------------
