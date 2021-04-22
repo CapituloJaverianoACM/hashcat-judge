@@ -6,12 +6,12 @@
     background-color: black !important;
 }
 .navbar .navbar-brand {
-    margin-left: 2rem !important; 
+    margin-left: 2.3rem !important; 
 }
 .navbar .navbar-brand img {
-    width: 8.3rem; 
+    width: 10rem; 
 }
-@media (max-width: 576px) {
+@media (max-width: 623px) {
     .navbar .navbar-brand img {
         margin-left: -2rem; 
         width: 23rem; 
@@ -22,7 +22,7 @@
 .navbar .access-buttons {
     margin-right: 2rem !important; 
 }
-.navbar .login, .navbar .sign-up {
+.access-buttons > button {
     font-size: 1rem !important;
     font-weight: 240;
     width: 10rem; 
