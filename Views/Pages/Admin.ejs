@@ -3,18 +3,47 @@
 <head>
     <!-- Head information -->
     <%- include('../Partials/head'); %> 
-    <!-- Stylesheet -->
+    <!------------- Stylesheet ------------>
+    <!-- Navbar -->
+    <link href="/Public/Css/Partials/header-logged-user.css" rel="stylesheet" /> 
+    <!-- Footer -->
+    <link href="/Public/Css/Partials/footer.css" rel="stylesheet" /> 
+    <!-- Page -->
+    <link href="/Public/Css/Pages/admin.css" rel="stylesheet" /> 
 </head>
 <body>
 
     <header>
         <!-- Include Navbar -->
-        <%- include('../partials/header'); %> 
+        <%- include('../partials/header-logged-user', { type: 'admin' }); %> 
     </header> 
 
     <!-- Main content -->
-    <div>
-        
+    <div class="container">
+        <!------------ Admin Information ------------->
+        <!-- Title -->
+        <p class="text-center text-white title mb-2 mt-5">You're currently under the role of : </p>
+        <!-- 'Admin' -->
+        <h1 class="text-center text-white mb-3 mt-3">Admin</h1>
+        <!-- Admin logo -->
+        <div class="text-center">
+            <img src="/Public/Assets/admin_logo4.svg" alt="Admin logo" /> 
+        </div>
+
+        <!------------ Admin actions ------------->
+        <!-- Actions title -->
+        <p class="text-center text-white mt-3 mb-4 actions-title">
+            What do you want to do with the contest? 
+        </p>
+        <!-- Action buttons -->
+        <div class="row d-flex justify-content-evenly actions mb-3">
+            <!-- Start contest -->
+            <button class="btn btn-primary col-4">Start contest</button>
+            <!-- End contest -->
+            <button class="btn btn-primary col-4" disabled>End contest</button>
+            <!-- Modify contest -->
+            <button class="btn btn-primary col-4" disabled>Modify contest</button>
+        </div>
     </div>
 
     <!-- Include footer -->

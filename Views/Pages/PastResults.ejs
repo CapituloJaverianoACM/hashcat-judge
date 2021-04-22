@@ -3,22 +3,106 @@
 <head>
     <!-- Head information -->
     <%- include('../Partials/head'); %> 
-    <!-- Stylesheet -->
+    <!------------- Stylesheet ------------>
+    <!-- Navbar -->
+    <link href="/Public/Css/Partials/header-logged-user.css" rel="stylesheet" /> 
+    <!-- Footer -->
+    <link href="/Public/Css/Partials/footer.css" rel="stylesheet" /> 
+    <!-- Ranking card -->
+    <link href="/Public/Css/Partials/ranking-card.css" rel="stylesheet" /> 
+    <!-- Page -->
+    <link href="/Public/Css/Pages/past-results.css" rel="stylesheet" /> 
 </head>
 <body>
 
     <header>
         <!-- Include Navbar -->
-        <%- include('../partials/header'); %> 
+        <%- include('../partials/header-logged-user', { type: '' }); %> 
     </header> 
 
     <!-- Main content -->
-    <div>
-        
+    <div class="container main mt-5 mb-5">
+        <!-- Date --> 
+        <form>
+            <div class="form-group row">
+                <label for="dateOfPastResults" class="col-3 mb-4">Select Date:</label>
+                <div class="col-3">
+                    <select class="form-control" id="dateOfPastResults" onchange="onOptionSelected(this.value)">
+                        <option selected disabled hidden> choose </option>
+                        <% dates.forEach( (date) => { %> 
+                            <option> <%= date.year %> | <%= date.period %> </option>
+                        <% }) %> 
+                    </select>
+                </div>
+            </div>
+        </form>       
+        <!-- Past results -->
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-evenly" id="podium">
+                <!-- In this tag the cards with the rankings will be displayed -->
+                <p class="display-1 text-center text-white"> Select a date to display the podium </p>
+            </div>
+        </div>
     </div>
 
     <!-- Include footer -->
     <%- include('../partials/footer'); %> 
     
 </body>
+
+    <script>
+        const onOptionSelected = (d) => {
+            // Get the podium HTML element
+            let podium = document.getElementById('podium'); 
+            // Get the date selected by the user 
+            const date = {... d.split('|')}; 
+            date[0] = date[0].replace(' ', ''); // Date[0] is the year
+            date[1] = date[1].replace(' ', ''); // Date[1] is te period 
+            // Get the data of the podium in a specific year and period
+            const everyPodium = <%- JSON.stringify(resultsHistory) %>; 
+            let podiumInSpecificDate; 
+            everyPodium.forEach( (element) => { 
+                if (element.date.year === date[0] && element.date.period === date[1]) 
+                    podiumInSpecificDate = element.podium; 
+            });
+            // Erase 'podium' element
+            podium.innerHTML = ''; 
+            /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                NOTE : instead of creating this elements here, I could create a new page, 
+                       call it here, and pass the podium as a paramter; 
+                       something like: 
+                       res.render('/new/page', {podium: podiumInSpecificDate})
+            */
+            // Create the card elements and insert them in 'podium' HTML element
+            podium.innerHTML += `<div class="card text-center mb-5">
+                                    <div class="card-body">
+                                        <img src="/Public/Assets/first-place.png" alt="First place logo">
+                                        <!-- Max 24 chars in name -->
+                                        <h5 class="card-title mt-2"> ${podiumInSpecificDate[0].name}  </h5>
+                                        <p class="card-text "> Score ${podiumInSpecificDate[0].score}/100 </p>
+                                    </div>
+                                </div>` ; 
+            podium.innerHTML += `<div class="card text-center mb-5">
+                                    <div class="card-body">
+                                        <img src="/Public/Assets/second-place.png" alt="First place logo">
+                                        <!-- Max 24 chars in name -->
+                                        <h5 class="card-title mt-2"> ${podiumInSpecificDate[1].name}  </h5>
+                                        <p class="card-text "> Score ${podiumInSpecificDate[1].score}/100 </p>
+                                    </div>
+                                </div>` ; 
+            podium.innerHTML += `<div class="card text-center mb-5">
+                                    <div class="card-body">
+                                        <img src="/Public/Assets/third-place.png" alt="First place logo">
+                                        <!-- Max 24 chars in name -->
+                                        <h5 class="card-title mt-2"> ${podiumInSpecificDate[2].name}  </h5>
+                                        <p class="card-text "> Score ${podiumInSpecificDate[2].score}/100 </p>
+                                    </div>
+                                </div>` ; 
+        };
+        
+    </script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
 </html>

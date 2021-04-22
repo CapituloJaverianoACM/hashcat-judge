@@ -7,7 +7,9 @@
     <!-- Navigation -->
     <div class="col-6 d-flex justify-content-around">
       <!-- Attemp -->
-      <button type="button" class="btn btn-primary attemp-btn">Attemp</button>
+      <% if (!type) { %> <!-- Check if the user that is calling the navbar is admin or not -->
+        <button type="button" class="btn btn-primary attemp-btn">Attemp</button>
+      <% } %> 
       <!-- Ranking -->
       <button type="button" class="btn btn-primary ranking-btn">Ranking</button>
       <!-- Past results -->
@@ -16,23 +18,3 @@
       <button type="button" class="btn btn-primary log-out-btn">Log out</button>
     </div>
 </nav> 
-
-<!-- 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="navbar-brand">
-        <img src="/Public/Assets/header-image.png" alt="Hashcat logo" style="width: 8.3rem" />  
-    </div>
-    <-- Toggler --
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"> - - - </span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" href="#">Features</a>
-        <a class="nav-item nav-link" href="#">Pricing</a>
-        <a class="nav-item nav-link disabled" href="#">Disabled</a>
-      </div>
-    </div>
-</nav>
---> 

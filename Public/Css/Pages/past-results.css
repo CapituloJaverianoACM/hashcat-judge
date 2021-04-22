@@ -1,0 +1,20 @@
+.display-1 {
+    font-weight: 100;
+    color: rgba(90, 90, 90, 0.795) !important;
+}
+
+form .form-group label {
+    color: white !important; 
+    font-weight: lighter !important;
+    font-size: 2rem; 
+    box-sizing: border-box;
+}
+form .form-group select {
+    color: white !important; 
+    background: transparent;
+    height: 3rem;
+}
+
+#podium {
+    min-height: 29rem;
+}

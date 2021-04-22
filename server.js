@@ -39,12 +39,17 @@ app.get('/attemp', (req, res) => {
 }); 
 
 // Past results
+const user = {name: 'Juan Diego Campos', score: '100'}; 
+const resultsHistory = [{date: { year: '2020', period: '1' }, podium: [user, user, user]}, 
+                        {date: { year: '2020', period: '2' }, podium: [user, user, user]}, 
+                        {date: { year: '2020', period: '3' }, podium: [user, user, user]}]; 
+const dates = [{year: 2020, period: 1}, {year: 2020, period: 2}, {year: 2020, period: 3}]
+// Every podium shoul be in asended sorted 
 app.get('/past-results', (req, res) => {
-    res.render('pages/PastResults'); 
+    res.render('pages/PastResults', { resultsHistory: resultsHistory, dates: dates }); 
 });
 
 //Ranking 
-const user = {name: 'Juan Diego Campos', score: '100'}; 
 let contestants = [user, user, user]; 
 app.get('/ranking', (req, res) => {
     res.render('pages/Ranking', { contestants: contestants }); 
