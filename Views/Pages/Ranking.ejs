@@ -19,14 +19,20 @@
 
 
     <!-- Main content -->
-    <div class="container-fluid mt-4">
+    <div class="container-fluid mt-4 main">
         <!-- Page name -->
         <p class="text-white page-title"> Ranking : </p>
         <!-- Cards for the podium -->
-        <div class="row d-flex justify-content-evenly">
-            <% for (let i = 0; i < 5 && i < contestants.length; i++) { %> 
-                <%- include('../Partials/ranking-card', {contestant: contestants[i], place: i + 1}); %>  
-            <% } %> 
+        <% if (!contestants) { %> 
+            <div class="d-flex justify-content-center align-items-center is-empty">
+                <p class="text-white text-center text-muted"> No one have made any attemps yet :( </h1>
+            </div>
+        <% } else { %> 
+            <div class="row d-flex justify-content-evenly">
+                <% for (let i = 0; i < 5 && i < contestants.length; i++) { %> 
+                    <%- include('../Partials/ranking-card', {contestant: contestants[i], place: i + 1}); %>  
+                <% } %> 
+        <% } %> 
     </div>
 
     <!-- Include footer -->

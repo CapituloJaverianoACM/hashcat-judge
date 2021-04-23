@@ -28,9 +28,9 @@
                 <label for="dateOfPastResults" class="col-3 mb-4">Select Date:</label>
                 <div class="col-3">
                     <select class="form-control" id="dateOfPastResults" onchange="onOptionSelected(this.value)">
-                        <option selected disabled hidden> choose </option>
-                        <% dates.forEach( (date) => { %> 
-                            <option> <%= date.year %> | <%= date.period %> </option>
+                        <option selected disabled hidden> choose ... </option>
+                        <% pastCompetitions.forEach( (competition) => { %> 
+                            <option> <%= competition.startDate.getFullYear() %> | <%= competition.periodDeveloped %> </option>
                         <% }) %> 
                     </select>
                 </div>
@@ -50,22 +50,23 @@
     
 </body>
 
+    <!-- Script to show the podium -->
     <script>
-        const onOptionSelected = (d) => {
+        const onOptionSelected = (selectedDate) => {
             // Get the podium HTML element
             let podium = document.getElementById('podium'); 
             // Get the date selected by the user 
-            const date = {... d.split('|')}; 
-            date[0] = date[0].replace(' ', ''); // Date[0] is the year
-            date[1] = date[1].replace(' ', ''); // Date[1] is te period 
+            const date = {... selectedDate.split('|')}; 
+            date[0] = parseInt(date[0].replace(' ', '')); // Date[0] is the year
+            date[1] = parseInt(date[1].replace(' ', '')); // Date[1] is te period 
             // Get the data of the podium in a specific year and period
-            const everyPodium = <%- JSON.stringify(resultsHistory) %>; 
+            const pastCompetitions = <%- JSON.stringify(pastCompetitions) %>; 
             let podiumInSpecificDate; 
-            everyPodium.forEach( (element) => { 
-                if (element.date.year === date[0] && element.date.period === date[1]) 
-                    podiumInSpecificDate = element.podium; 
+            pastCompetitions.forEach( (competition) => { 
+                if (competition.yearDeveloped === date[0] && competition.periodDeveloped === date[1]) 
+                    podiumInSpecificDate = competition.ranking; 
             });
-            // Erase 'podium' element
+            // Erase 'ranking' element
             podium.innerHTML = ''; 
             /*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 NOTE : instead of creating this elements here, I could create a new page, 

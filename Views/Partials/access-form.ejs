@@ -3,30 +3,30 @@
     <p class="display-4 text-white mb-4 form-title"> <%= formName.replace('-', ' '); %> </p>
 
     <!-- Form -->
-    <form class="row g-3"> 
+    <form class="row g-3" method="POST" action="<%= formName.toLowerCase(); %>" > 
         <!-------------- Names Row ------------>
         <% // Check if the form is for log-in or sign-up  %> 
         <% if (formName === 'Sign-up') { %> 
             <!-- First name -->
             <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">
+                <input type="text" name="first-name" class="form-control" id="inputFirstName" placeholder="First Name">
             </div>
             <!-- Last name -->
             <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="inputSecondName" placeholder="Last Name">
+                <input type="text" name="second-name" class="form-control" id="inputSecondName" placeholder="Last Name">
             </div>
         <% }; %>  
     
         <!-------------- Email Row ------------>
         <!-- Email row -->
         <div class="form-group col-md-12">
-            <input type="email" class="form-control" id="inputEmail" placeholder="example@javeriana.edu.co"> 
+            <input type="email" name="email" class="form-control" id="inputEmail" placeholder="example@javeriana.edu.co"> 
         </div>
     
         <!-------------- Password Row ------------>
         <!-- Password row -->
         <div class="form-group col-md-12">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password"> 
+            <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password"> 
         </div>
     
         <!-------------- Fourth row ------------>

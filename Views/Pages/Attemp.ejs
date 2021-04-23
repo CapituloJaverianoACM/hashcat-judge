@@ -21,16 +21,26 @@
     </header> 
 
     <!-- Main content -->
-    <div class="container main d-flex align-items-center justify-content-center">
+    <div class="container main d-flex align-items-center justify-content-evenly">
         <!-- Attemp Form -->
-        <form>
+        <form class="col-9" method="POST" action="/new-attemp">
             <!-- Text area -->
             <div class="form-group">
-                <label for="hashes">Enter hashes separated by new lines : </label>
-                <textarea class="form-control" id="hashes" rows="15"></textarea>
+                <label class="mb-2" for="hashes">Enter hashes separated by new lines : </label>
+                <% var placeholder = 'hash 1 \nhash 2 \nhash 3 \n...'; %> 
+                <textarea class="form-control" 
+                          name="hashes" 
+                          id="hashes" 
+                          rows="15" 
+                          placeholder="<%- placeholder %>"></textarea>
             </div>
-            <!-- Submin button -->
+            <!-- Submit button -->
+            <button class="btn btn-primary col-6 mt-4">Submit attemp</button>
         </form>
+        <!-- Result of the attemp -->
+        <% if (attempScore) { %> 
+            <p class="col-2 text-white attemp-score">Attemp Score : <span> <%= attempScore %> </span>  </p>
+        <% } %> 
     </div>
 
     <!-- Include footer -->
