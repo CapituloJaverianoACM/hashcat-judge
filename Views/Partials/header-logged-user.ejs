@@ -3,18 +3,18 @@
     <!-- Hashcat image --> 
     <div class="col-6">
         <img src="/Public/Assets/header-image.png" alt="Hashcat logo" style="width: 8.3rem"/>
-    </div>
-    <!-- Navigation -->
-    <div class="col-6 d-flex justify-content-around">
-      <!-- Attemp -->
-      <% if (!type) { %> <!-- Check if the user that is calling the navbar is admin or not -->
-        <button type="button" class="btn btn-primary attemp-btn">Attemp</button>
-      <% } %> 
-      <!-- Ranking -->
-      <button type="button" class="btn btn-primary ranking-btn">Ranking</button>
-      <!-- Past results -->
-      <button type="button" class="btn btn-primary past-results-btn">Past results</button>
-      <!-- Log out -->
-      <button type="button" class="btn btn-primary log-out-btn">Log out</button>
-    </div>
-</nav> 
+      </div>
+      <!-- Navigation -->
+      <div class="col-6 d-flex justify-content-end">
+        <!-- Attemp -->
+        <% if (!type) { %> <!-- Check if the user that is calling the navbar is admin or not -->
+          <button type="button" class="btn btn-primary attemp-btn me-4">Attemp</button>
+        <% } %> 
+        <!-- Ranking -->
+        <button type="button" class="btn btn-primary ranking-btn me-4">Ranking</button>
+        <!-- Past results -->
+        <button type="button" class="btn btn-primary past-results-btn me-4">Past results</button>
+        <!-- Log out -->
+        <button type="button" class="btn btn-primary log-out-btn">Log out</button>
+      </div>
+  </nav> 

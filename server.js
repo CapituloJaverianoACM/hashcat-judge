@@ -83,7 +83,7 @@ app.get('/past-results', async (req, res) => {
     const pastCompetitions = [competition, competition, competition]; // = await ... query 
     pastCompetitions.forEach( (comp) => console.log(comp)) ;
     // Render pastResults page
-    res.render('pages/PastResults', { resultsHistory: resultsHistory, dates: dates, pastCompetitions: pastCompetitions }); 
+    res.render('pages/PastResults', { pastCompetitions: pastCompetitions }); 
 });
 
 //Ranking 
