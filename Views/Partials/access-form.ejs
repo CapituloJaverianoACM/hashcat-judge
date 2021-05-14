@@ -3,7 +3,12 @@
     <p class="display-4 text-white mb-4 form-title"> <%= formName.replace('-', ' '); %> </p>
 
     <!-- Form -->
-    <form class="row g-3" method="POST" action="<%= formName.toLowerCase(); %>" > 
+    <%
+        var handlePostRequest = '';  
+        if (formName.toLowerCase() === 'log-in') handlePostRequest = '/';  
+        else handlePostRequest = 'sign-up'; 
+    %> 
+    <form class="row g-3" method="POST" action="<%= handlePostRequest %>" > 
         <!-------------- Names Row ------------>
         <% // Check if the form is for log-in or sign-up  %> 
         <% if (formName === 'Sign-up') { %> 
@@ -32,7 +37,7 @@
         <!-------------- Fourth row ------------>
         <!-- Submit button -->
         <div class="col-12">
-            <button type="submit" class="btn btn-primary sign-up"> <%= formName.replace('-', ' '); %> </button>
+            <button id="submit-access-form" type="submit" class="btn btn-primary sign-up"> <%= formName.replace('-', ' '); %> </button>
         </div>
     </form>
 </div>

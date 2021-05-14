@@ -12,5 +12,8 @@ const AttempSchema = new Schema({
                 }
 }); 
 
-// Export Attemp Schema
-export default AttempSchema; 
+// Create Attemp model 
+const AttempModel = mongoose.model('Attemp', AttempSchema); 
+
+// Export Attemp Schema and Attemp Model 
+export { AttempSchema, AttempModel }; 
