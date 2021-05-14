@@ -1,6 +1,6 @@
 /*---------  Main content  ------------*/ 
 .main {
-    height: 37rem;
+    height: 39.5rem;
 }
 
 /*---------  Enter Hashes form  ------------*/ 
@@ -17,8 +17,10 @@ textarea {
 
 /*-------------  Attemp score  -----------*/ 
 .attemp-score {
+    width: 100%; 
     font-weight: lighter;
     font-size: 2rem; 
+    margin-bottom: -1rem; 
 }
 .attemp-score span {
     font-weight: 350;

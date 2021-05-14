@@ -15,6 +15,8 @@
       <!-- Past results -->
       <button type="button" class="btn btn-primary past-results-btn">Past results</button>
       <!-- Log out -->
-      <button type="button" class="btn btn-primary log-out-btn">Log out</button>
+      <form action="/logout?_method=DELETE" method="POST">
+        <button type="submit" class="btn btn-primary log-out-btn">Log out</button>
+      </form>
     </div>
 </nav> 

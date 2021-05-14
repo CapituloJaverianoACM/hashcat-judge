@@ -21,9 +21,9 @@
     </header> 
 
     <!-- Main content -->
-    <div class="container main d-flex align-items-center justify-content-evenly">
+    <div class="container main d-flex flex-column align-items-center justify-content-evenly">
         <!-- Attemp Form -->
-        <form class="col-9" method="POST" action="/new-attemp">
+        <form class="col-9" method="POST" action="/attemp">
             <!-- Text area -->
             <div class="form-group">
                 <label class="mb-2" for="hashes">Enter hashes separated by new lines : </label>
@@ -39,7 +39,7 @@
         </form>
         <!-- Result of the attemp -->
         <% if (attempScore) { %> 
-            <p class="col-2 text-white attemp-score">Attemp Score : <span> <%= attempScore %> </span>  </p>
+            <p class="col-2 text-white attemp-score text-center">Attemp Score : <span> <%= attempScore %> </span>  </p>
         <% } %> 
     </div>
 

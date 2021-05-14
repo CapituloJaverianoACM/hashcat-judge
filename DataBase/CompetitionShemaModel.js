@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'; 
-import ContestantSchema from './ContestantSchema.js'; 
+import { ContestantSchema } from './ContestantSchemaModel.js'; 
 
 const Schema = mongoose.Schema; 
 
