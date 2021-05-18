@@ -15,5 +15,3 @@
 - nodemon
 - Ejs
 - Passportjs
-
-  
