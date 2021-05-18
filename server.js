@@ -101,7 +101,7 @@ const isContestantAlreadyLoggedIn = (req, res, next) => {
 //  in order to load the EJS file 
 
 //----------------------------------------------------
-//--               Logout endpoints                 --
+//--               Logout endpoint                  --
 //----------------------------------------------------
 // .delete isn't supported by default, so the library 'method-override' 
 // is required
@@ -261,14 +261,24 @@ app.get('/past-results', authenticateContestantRequest, async (req, res) => {
 //----------------------------------------------------
 app.get('/ranking', authenticateContestantRequest, async (req, res) => {
     // Get the current competition 
-    const currentCompetition = await CompetitionModel.find({}); 
+    const currentCompetition = await CompetitionModel.findOne({}); 
+    console.log(currentCompetition.ranking); 
     // Get the ranking of the current compeition from the DB 
-    // const podium = currentCompetition.ranking || null; 
-    const podium = [{name: 'Name', score: '200'}, {name: 'Name', score: '200'}, {name: 'Name', score: '200'}, {name: 'Name', score: '200'}]
+    const podium = currentCompetition.ranking.map( contestant => { return {name: contestant.firstName + ' ' + contestant.secondName, score: contestant.maxScore } }); 
+    // const podium = [{name: 'Name', score: '200'}, {name: 'Name', score: '200'}, {name: 'Name', score: '200'}, {name: 'Name', score: '200'}]
+    
     // Render view with ranking information 
     res.render('pages/Ranking', { contestants: podium }); 
 }); 
 
+
+//----------------------------------------------------
+//--                About us endpoints                 --
+//----------------------------------------------------
+app.get('/developers', (req, res) => {
+    // Render developers page
+    res.render('pages/Developers', { type: '' });
+});
 
 //----------------------------------------------------
 //--                Admin endpoints                 --
